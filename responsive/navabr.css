@@ -1,0 +1,272 @@
+/* Example media query for responsiveness */
+@media screen and (max-width: 1024px) {
+  html{
+    font-size: 55%;
+  }
+ 
+    .first-page .container1 {
+      flex-direction: column;
+      /* align-items: center; */
+    }
+    
+    .first-page .container1 nav ul {
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+    }
+    .first-page .container1 .nav-opt {
+      align-self: flex-end;
+      
+    }
+    
+    .first-page .container2 .content p {
+      position: relative;
+      top: -2rem;
+     
+    }
+    .first-page .container2 .content a {
+      top: 3rem;
+      left: 10%;
+    }
+    .first-page .image {
+      bottom:1%;
+    }
+    .first-page  .image img {
+      width: 35rem;
+    }
+    .second-page .courses-heading{
+      flex-direction: column;
+      /* justify-content: center; */
+    }
+    .second-page .courses-heading h1{
+      justify-self: center;
+      margin-top: 5%;
+    }
+    .second-page .courses-heading .subs{
+     justify-self: end;
+    }
+  }
+/* Example media query for responsiveness */
+@media screen and (max-width: 768px) {
+  html{
+    font-size: 55%;
+  }
+  body{
+    margin: 0;
+  }
+ 
+    .first-page .container1 {
+      flex-direction: column;
+      /* align-items: center; */
+    }
+    .first-page .container1 nav {
+      flex-direction: column;
+    }
+    .first-page .container1 nav ul {
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+    }
+    .first-page .container1 .nav-opt {
+      align-self: flex-end;
+      
+    }
+    .first-page .container2 .content {
+      width: 55%;
+    }
+    .first-page .container2 .content p {
+      position: relative;
+      font-size: 3rem;
+      font-weight: 550;
+      
+    }
+    .first-page .container2 .content a {
+      top: 6rem;
+      left: 10%;
+    }
+    .first-page .image {
+      bottom:1.5%;
+      right: 2%;
+    }
+    .first-page  .image img {
+      width: 33rem;
+    }
+    .second-page .second-logos .logo:not(:first-child) img{
+      height: 4rem;
+      width: 4rem;
+      margin-right: -1rem;
+    }
+    .second-page .second-logos .logo:first-child img{
+      height: 6rem;
+      width: 9rem;
+    }
+    footer .social-medias {
+    gap: 10%;
+    }
+   
+    .first-page .container1 nav label i{
+      display: inline-block;
+      font-size: 5rem;
+      color: var(--button-color);
+      cursor: pointer;
+    }
+    .first-page .container1 nav ul a{
+      font-size: 2rem;
+    }
+    .first-page .container1 nav ul {
+      display: none;
+      right: -100%;
+      position: absolute;
+      transition: all 2s ease;
+      background-color: white;
+      height: 7rem;
+      width: 90%;
+    }
+    .first-page .container1 nav {
+      flex-direction: row;
+    }
+    
+    .first-page .container1 nav #check:checked ~ ul{
+      display: flex;
+      right: 0%;
+     
+    }
+  }
+  @media screen and (max-width : 426px) {
+    html{
+      font-size: 44%;
+    }
+    .first-page .container1 nav ul {
+   padding: 0;
+    }
+    .first-page .image {
+      bottom:2%;
+      right: 2%;
+    }
+    .second-page .second-logos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .second-page .second-logos .logo{
+      place-self: center;
+    }
+    .second-page .second-logos .logo:nth-child(3){
+      grid-row-start:2 ;
+      grid-column-start: 2;
+    }
+    .forth-page .populartutor{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 5rem;
+      align-items: center;
+    }
+    .second-page .popular-courses-contents {
+      padding:  0 20%;
+    }
+    .second-page .popular-courses-contents .popular-courses {
+      height: 75%;
+      min-width: 32rem;
+    }
+    .second-page .popular-courses-contents .popular-courses .popular-courses-info{
+  font-size: 1.7rem;
+    }
+    .second-page .courses-heading .subs {
+      font-size: 2rem;
+    }
+    .second-page .courses-heading .subs .subcheckbox{
+      display: grid;
+      grid-template-columns: 1fr 8fr;
+      justify-items: center;
+      row-gap: 5px;
+    }
+    .forth-page .populartutor .tutor{
+      display: flex;
+      gap: 5rem;
+      align-items: center;
+      justify-content:space-between ;
+    }
+    .forth-page .populartutor .tutor:nth-child(odd) {
+      flex-direction: row;
+      gap:5rem;
+  
+
+    }
+    .forth-page .populartutor .tutor:nth-child(even) {
+      flex-direction: row-reverse;
+      gap: 5rem;
+
+
+    }
+    footer{
+      padding-bottom: 4%;
+    }
+    footer .social-medias {
+      gap: 5%;
+      }
+      .forth-page .populartutor .tutor .about-tutor{
+        font-size: 1.7rem;
+      }
+  }
+  @media screen and (max-width : 376px) {
+    .first-page .container2 .content {
+      width: 70%;
+      left: 15%;
+    }
+    .first-page .container1 nav ul a{
+      margin-right: 2rem !important;
+      padding: 0;
+      
+       }
+    .first-page .container2 .content a {
+      top: -2rem;
+      left: 14%;
+    }
+    .first-page .container2 .content p {
+    top: -9rem;
+      
+    }
+    .second-page .courses-heading .subs {
+      font-size: 1.8rem;
+    }
+    .second-page .second-logos .logo h2 {
+      font-size: 3rem !important;
+    }
+    .forth-page .populartutor .tutor .about-tutor{
+      font-size: 1.7rem;
+    }
+  }
+  @media screen and (max-width : 321px) {
+    .first-page .container2 .content {
+      width: 70%;
+      left: 15%;
+    }
+    .first-page .container2 .content p{
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    }
+    .first-page .container1 nav ul a{
+      margin-right: 1rem !important;
+      padding: 0;
+      
+       }
+       .forth-page .populartutor{
+        padding: 0;
+       }
+       .forth-page .populartutor .tutor:nth-child(odd) {
+        gap:2rem;
+      }
+      .forth-page .populartutor .tutor:nth-child(even) {
+        gap: 2rem;
+
+      }
+    .second-page .courses-heading .subs {
+      font-size: 1.8rem;
+    }
+    .second-page .second-logos .logo h2 {
+      font-size: 2.2rem !important;
+    }
+    .forth-page .populartutor .tutor .about-tutor{
+      font-size: 1.7rem;
+    }
+  }

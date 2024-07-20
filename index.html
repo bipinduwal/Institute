@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Mania</title>
     <style>
+      html {
+        font-size: 62.5%;
+      }
       * {
         margin: 0;
         box-sizing: border-box;
@@ -13,7 +16,7 @@
       body {
         scroll-behavior: auto;
         background-color: #494848;
-        margin: 0 52px;
+        margin: 0 5.2rem;
         font-family: sans-serif;
       }
       body::-webkit-scrollbar {
@@ -22,7 +25,8 @@
       :root {
         --primary-color: rgb(14, 95, 95);
         --button-color: rgba(18, 122, 122, 0.929);
-        --font-size: 26px;
+        --font-size: 2.6rem;
+        --logo-font: 3.4rem;
       }
       .first-page {
         width: 100%;
@@ -40,7 +44,7 @@
         padding: 2%;
       }
       .first-page .container1 header h1 {
-        font-size: 40px;
+        font-size: 4rem;
         font-weight: 700;
         background: linear-gradient(
           to bottom,
@@ -55,12 +59,13 @@
       .first-page .container1 nav {
         display: flex;
         /* width: 50%; */
+        align-items: center;
         justify-content: space-between;
       }
       .first-page .container1 nav ul {
         list-style: none;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
       }
       .first-page .container1 nav ul a {
@@ -69,20 +74,31 @@
         font-size: var(--font-size);
         font-weight: 600;
         color: rgb(78, 78, 78);
-        margin-right: 40px;
+      }
+      .first-page .container1 nav ul a:not(:last-child) {
+        margin-right: 4rem;
       }
       .first-page .container1 nav ul a::after {
         content: "";
         position: absolute;
-        bottom: -2px; /* Adjust as needed */
+        bottom: -0.2rem; /* Adjust as needed */
         left: 0;
         width: 0;
-        height: 2px; /* Adjust as needed */
+        height: 0.2rem; /* Adjust as needed */
         background-color: var(--button-color); /* Same color as the text */
         transition: width 0.3s ease;
       }
       .first-page .container1 nav ul a:hover::after {
         width: 100%;
+      }
+
+      .first-page .container1 nav #check {
+        display: none;
+      }
+      .first-page .container1 nav label i {
+        display: none;
+        font-size: 5rem;
+        color: var(--button-color);
       }
       .first-page .container1 .nav-opt {
         display: flex;
@@ -91,28 +107,29 @@
         justify-content: space-between;
       }
       .first-page .container1 .nav-opt a:first-child {
-        margin-right: 40px;
+        margin: 0 4rem;
         color: var(--primary-color);
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 600;
       }
       .first-page .container1 .nav-opt a:nth-child(2) {
-        margin-right: 40px;
+        margin-right: 4rem;
         color: #fff;
-        font-size: 19px;
+        font-size: 1.9rem;
         font-weight: 550;
         border: none;
-        border-radius: 10px;
+        border-radius: 1rem;
         background: var(--button-color);
         text-decoration: none;
-        padding: 12px 30px;
+        padding: 1.2rem 3rem;
       }
       .first-page .container1 .nav-opt a:nth-child(3) {
         color: var(--button-color);
-        font-size: 48px;
+        font-size: 4.8rem;
       }
       .first-page .container2 {
         position: relative;
+        height: auto;
       }
       .first-page .container2 .search-space {
         position: absolute;
@@ -124,15 +141,15 @@
         position: absolute;
         top: 18%;
         left: 3%;
-        font-size: 42px;
+        font-size: 4.2rem;
         color: #3877846d;
       }
       .first-page .container2 .search-space input {
         width: 100%;
-        padding: 15px 30px;
-        border-radius: 15px;
-        text-indent: 40px;
-        border: 3px solid var(--button-color);
+        padding: 1.5rem 3rem;
+        border-radius: 1.5rem;
+        text-indent: 4rem;
+        border: 0.3rem solid var(--button-color);
         justify-items: center;
         font-size: var(--font-size);
       }
@@ -140,8 +157,8 @@
         background-color: rgba(43, 143, 163, 0.249);
       }
       .first-page .container2 .search-space input:focus {
-       outline: none;
-       background-color: rgba(43, 143, 163, 0.249);
+        outline: none;
+        background-color: rgba(43, 143, 163, 0.249);
       }
       .first-page .container2 .search-space input::placeholder {
         color: rgba(83, 115, 115, 0.214);
@@ -157,36 +174,36 @@
       .first-page .container2 .content p {
         position: relative;
         top: 0%;
-        font-size: 30px;
+        font-size: 3rem;
         font-weight: 550;
         text-transform: capitalize;
-        margin-top: 5px;
+        margin-top: 0.5rem;
         color: var(--button-color);
       }
       .first-page .container2 .content a {
         position: relative;
-        top: 80px;
-        left: 42%;
-        margin-right: 40px;
+        top: 8rem;
+        left: 30%;
+        margin-right: 4rem;
         color: #fff;
-        font-size: 19px;
+        font-size: 1.9rem;
         font-weight: 550;
         border: none;
-        border-radius: 10px;
+        border-radius: 1rem;
         background: var(--button-color);
         text-decoration: none;
-        padding: 20px 40px;
+        padding: 2rem 4rem;
       }
-      .first-page .container2 .content .image {
-        /* width: 100px; */
+      .first-page .image {
+        height: 10rem;
         position: absolute;
-        top: -70px;
-        left: 90%;
-        height: 200px;
+        bottom: 1%;
+        right: 7%;
+        height: auto;
         /* overflow: hidden; */
       }
-      .first-page .container2 .content .image img {
-        width: 400px;
+      .first-page .image img {
+        width: 39rem;
         animation-name: landimage;
         animation-duration: 2s;
         animation-timing-function: ease-in;
@@ -198,7 +215,7 @@
           transform: translateX(0);
         }
         to {
-          transform: translateX(10px);
+          transform: translateX(1rem);
         }
       }
       .btn:hover {
@@ -215,31 +232,33 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        flex-wrap: wrap;
       }
       .second-page .second-logos .logo {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 1rem;
       }
+
       /* .second-page .second-logos .logo:first-child::before {
         content: "^";
         display: block;
         position: relative;
-        top: -20px; 
-        left: 5px;
+        top: -20rem; 
+        left: 5rem;
         font-weight: 900;
-        font-size: 40px;
+        font-size: 40rem;
         color: rgb(163, 101, 225);
       } */
       .second-page .second-logos .logo:nth-child(2) h2 {
-        font-size: 34px;
+        font-size: var(--logo-font);
       }
       .second-page .second-logos .logo:nth-child(3) h2 {
-        font-size: 34px;
+        font-size: var(--logo-font);
         color: rgb(0, 106, 255);
       }
       .second-page .second-logos .logo:nth-child(4) h2 {
-        font-size: 42px;
+        font-size: var(--logo-font);
         color: rgb(0, 47, 202);
       }
 
@@ -251,20 +270,27 @@
         display: flex;
         justify-content: space-between;
         padding-left: 8%;
+        z-index: 1;
+        position: relative;
       }
       .second-page .courses-heading h1 {
         align-self: center;
         color: var(--primary-color);
         font-stretch: condensed;
-        font-size: 40px;
+        font-size: 4rem;
       }
       .second-page .courses-heading .subs {
         align-self: flex-end;
         padding-right: 3%;
         display: flex;
         align-items: center;
-        padding-bottom: 15px;
-        gap: 20px;
+        padding-bottom: 1.5rem;
+        gap: 2rem;
+        font-size: 1.5rem;
+      }
+      .second-page .courses-heading .subs .subcheckbox {
+        display: flex;
+        justify-items: center;
       }
       .second-page .courses-heading .subs > *:not(p) {
         text-decoration: none;
@@ -272,10 +298,10 @@
         font-weight: bold;
       }
       .second-page .courses-heading .subs a:first-child {
-        font-size: 24px;
+        font-size: 2.4rem;
       }
       .second-page .courses-heading .subs input {
-        margin: 0 10px;
+        margin: 0 1rem;
         background-color: #494848;
         scale: 1.5;
       }
@@ -283,63 +309,78 @@
         height: 75vh;
         background-color: #fef6f6;
         display: flex;
+        z-index: 0;
         justify-content: space-around;
         align-items: center;
         position: relative;
-        padding-left: 40px;
-        padding-right: 80px;
+        padding: 0 13rem;
+        gap: 16rem;
+        scroll-snap-type: x mandatory;
+        overflow-y: auto;
       }
-
-      .second-page .popular-courses-contents .viewmorecourses {
+      .second-page .popular-courses-contents::-webkit-scrollbar {
+        display: none;
+      }
+      .second-page .courses-heading .viewmorecourses {
         position: absolute;
-        top: 5%;
+        top: 115%;
         right: 11%;
       }
-      .second-page .popular-courses-contents .viewmorecourses a {
+      .second-page .courses-heading .viewmorecourses a {
         color: var(--button-color);
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 600;
         text-decoration: none;
       }
-      .second-page .popular-courses-contents .viewmorecourses a::after {
+      .second-page .courses-heading .viewmorecourses a::after {
         content: "";
         display: block;
         position: absolute;
-        height: 0.5px;
+        height: 0.05rem;
         width: 100%;
         background-color: rgb(12, 131, 146);
         left: 0;
         bottom: 13%;
       }
 
-      .second-page .popular-courses-contents .nextpagearrow {
+      .second-page .courses-heading .nextpagearrow {
         position: absolute;
-        top: 50%;
+        top: 125%;
         transform: translateY(-50%);
         right: 1%;
-        font-size: 70px;
+        font-size: 7rem;
         font-weight: 500;
         font-stretch: ultra-condensed;
         color: var(--button-color);
       }
       .second-page .popular-courses-contents .popular-courses {
         position: relative;
-        width: 280px;
-        height: 450px;
-        box-shadow: 5px 5px 5px rgb(109, 109, 109);
+        min-width: 28rem;
+        max-width: 29rem;
+        height: 45rem;
+        box-shadow: 5px 5px 5px rgba(188, 188, 188, 0.66);
         background-color: #fff;
+        scroll-snap-align: center;
         overflow: hidden;
+      }
+      .second-page .popular-courses-contents .popular-courses:hover {
+        box-shadow: 5px 5px 5px rgb(170, 170, 170);
+        transform: translateY(-2%);
+      }
+      .second-page .popular-courses-contents .popular-courses:hover img {
+        transform: scale(1.09);
       }
       .second-page .popular-courses-contents .popular-courses .tag {
         position: absolute;
-        top: 0;
+        top: 4px;
+        z-index: 6;
       }
       .second-page .popular-courses-contents .popular-courses .tag a {
         color: white;
-        padding: 7px 20px;
+        padding: 0.7rem 2rem;
         text-decoration: none;
         background-color: #c71818;
-        font-size: 11px;
+        font-size: 1.1rem;
       }
       .second-page
         .popular-courses-contents
@@ -352,21 +393,22 @@
         object-fit: cover;
         height: 100%;
         width: 100%;
+        z-index: 5;
       }
       .second-page
         .popular-courses-contents
         .popular-courses
         .popular-courses-info {
-        margin: 20px 14px;
+        margin: 2rem 1.4rem;
         display: grid;
         grid-template-rows: repeat(1fr, 4);
-        gap: 7px;
+        gap: 0.7rem;
       }
       .second-page
         .popular-courses-contents
         .popular-courses
         .popular-courses-info {
-        margin: 20px 14px;
+        font-size: 1.5rem;
       }
       .second-page
         .popular-courses-contents
@@ -374,7 +416,7 @@
         .popular-courses-info
         h3 {
         color: rgb(5, 83, 74);
-        font-size: 20px;
+        font-size: 2rem;
       }
       .second-page
         .popular-courses-contents
@@ -386,7 +428,7 @@
       .second-page .popular-courses-contents .popular-courses-info div del,
       .second-page .popular-courses-contents .popular-courses-info div price {
         color: #595959;
-        margin-right: 15px;
+        margin-right: 1.5rem;
         font-weight: 600;
       }
       .second-page .popular-courses-contents .popular-courses-info div > span {
@@ -396,14 +438,14 @@
       .second-page .popular-courses-contents .popular-courses-info .logo {
         display: flex;
         align-items: center;
-        gap: 3px;
+        gap: 0.3rem;
         color: rgb(0, 106, 255);
-        font-size: 13px;
+        font-size: 1.3rem;
         font-weight: 500;
       }
       .second-page .popular-courses-contents .popular-courses-info .ratings i {
         color: rgb(215, 193, 65);
-        font-size: 24px;
+        font-size: 2.4rem;
       }
       .second-page
         .popular-courses-contents
@@ -411,7 +453,7 @@
         .ratings
         span {
         color: rgb(118, 118, 118);
-        font-size: 15px;
+        font-size: 1.5rem;
       }
       .second-page .popular-courses-contents .popular-courses .add-btn {
         position: absolute;
@@ -423,14 +465,14 @@
       }
       .second-page .popular-courses-contents .popular-courses .add-btn i {
         color: var(--button-color);
-        font-size: 40px;
+        font-size: 4rem;
       }
       .second-page .popular-courses-contents .popular-courses .add-btn i:hover {
         scale: 1.2;
         cursor: pointer;
       }
       .second-page .popular-courses-contents .popular-courses .add-btn p {
-        font-size: 10px;
+        font-size: 1rem;
         font-weight: 600;
         color: #868686;
       }
@@ -443,24 +485,25 @@
       .second-page .popular-courses-contents .popular-courses .enroll a {
         text-decoration: none;
         color: var(--button-color);
-        border: 1px solid var(--button-color);
-        padding: 10px 20px;
-        border-radius: 6px;
+        border: 0.1rem solid var(--button-color);
+        padding: 1rem 2rem;
+        border-radius: 0.6rem;
         font-weight: 600;
+        font-size: 1.5rem;
       }
       .second-page .popular-courses-contents .popular-courses .enroll a:hover {
         background-color: var(--button-color);
         color: white;
-        border:none;
-        
+        border: none;
       }
       .second-page .popular-courses-contents .popular-courses .buy a {
         text-decoration: none;
         color: white;
         background-color: var(--button-color);
-        padding: 10px 28px;
-        border-radius: 6px;
+        padding: 1rem 2.8rem;
+        border-radius: 0.6rem;
         font-weight: 600;
+        font-size: 1.5rem;
       }
       .second-page .popular-courses-contents .popular-courses .buy a:hover {
         background-color: var(--primary-color);
@@ -473,11 +516,15 @@
       }
       .second-page .popular-courses-contents .popular-courses .viewmoreinfo a {
         color: var(--button-color);
-        font-size: 15px;
+        font-size: 1.5rem;
         font-weight: 600;
         text-decoration: none;
       }
-      .second-page .popular-courses-contents .popular-courses .viewmoreinfo a:hover {
+      .second-page
+        .popular-courses-contents
+        .popular-courses
+        .viewmoreinfo
+        a:hover {
         color: red;
       }
       .second-page
@@ -488,49 +535,53 @@
         content: "";
         display: block;
         position: absolute;
-        height: 0.5px;
+        height: 0.01rem;
         width: 100%;
         background-color: rgb(12, 131, 146);
         left: 0;
         bottom: 13%;
       }
       .forth-page {
-        height: 90vh;
+        /* height: 90vh; */
         background-color: white;
         padding: 4% 8%;
       }
       .forth-page .courses-heading h1 {
         color: var(--primary-color);
         font-stretch: condensed;
-        font-size: 40px;
+        font-size: 4rem;
       }
       .forth-page .description {
         margin: 2% 0;
         display: flex;
         /* grid-template-columns: 3fr 1fr; */
         justify-content: space-between;
+        align-items: center;
       }
       .forth-page .description p {
         color: #868686;
-        font-size: 22px;
+        font-size: 2.2rem;
         width: 70%;
       }
       .forth-page .description a {
+        display: inline-block;
         text-decoration: none;
         background: var(--button-color);
-        padding: 10px 35px;
+        padding: 1rem 3.5rem;
         color: #ffffff;
-        font-size: 24px;
+        font-size: 2.4rem;
+        height: fit-content;
+        text-wrap: nowrap;
         font-weight: 600;
         margin-right: 3%;
-        border-radius: 6px;
+        border-radius: 0.6rem;
       }
       .forth-page .description a:hover {
         background-color: var(--primary-color);
       }
       .forth-page h3 {
         color: var(--button-color);
-        font-size: 25px;
+        font-size: 2.5rem;
       }
       .forth-page .populartutor {
         display: flex;
@@ -544,11 +595,11 @@
         align-items: center;
       }
       .forth-page .populartutor .tutor .profile-pic {
-        width: 190px;
-        height: 190px;
+        width: 15rem;
+        height: 15rem;
         border-radius: 50%;
         overflow: hidden;
-        box-shadow: 0 0 10px rgb(12, 120, 150);
+        box-shadow: 0 0 1rem rgb(12, 120, 150);
       }
       .forth-page .populartutor .tutor img {
         object-fit: cover;
@@ -558,78 +609,109 @@
       .forth-page .populartutor .tutor .about-tutor {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        margin: 20px;
+        gap: 0.5rem;
+        margin: 2rem;
+        font-size: 1.5rem;
       }
-      .forth-page .populartutor .tutor .about-tutor h4{
+      .forth-page .populartutor .tutor .about-tutor h4 {
         color: #868686;
         font-style: italic;
         font-weight: 600;
-        font-size: larger;
+        font-size: 1.8rem;
       }
-      .forth-page .populartutor .tutor .about-tutor p{
+      .forth-page .populartutor .tutor .about-tutor p {
         color: var(--primary-color);
         font-weight: 600;
       }
-      .forth-page .populartutor .tutor .about-tutor a{
+      .forth-page .populartutor .tutor .about-tutor a {
         color: var(--button-color);
       }
-      .forth-page .populartutor .tutor .about-tutor .rating{
+      .forth-page .populartutor .tutor .about-tutor .rating {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 0.5rem;
         color: var(--button-color);
       }
-      .forth-page .populartutor .tutor .about-tutor .rating i{
-        color:gold;
+      .forth-page .populartutor .tutor .about-tutor .rating i {
+        color: gold;
       }
-      .forth-page .populartutor .tutor .about-tutor .rating span{
-        color:#868686;
+      .forth-page .populartutor .tutor .about-tutor .rating span {
+        color: #868686;
         font-style: italic;
-        font-size:12px;
+        font-size: 1.2rem;
       }
-      footer{
+      footer {
         background-color: var(--primary-color);
-        height: 30vh;
+        /* height: 30v; */
         display: flex;
         flex-direction: column;
-        padding: 4% 15%;
+        padding: 4% 15% 4% 5%;
+        font-size: 1.5rem;
       }
-      footer .container{
+      footer .container {
         display: flex;
         gap: 5%;
       }
-      footer .container .col{
+      footer .container .col {
         display: flex;
         flex-direction: column;
-        gap: 9px;
+        gap: 0.9rem;
       }
-      footer .container .col a{
+      footer .container .col a {
         text-decoration: none;
         color: white;
-        font-size: 15px;
+        font-size: 1.5rem;
       }
-      footer .social-medias{
+      footer .social-medias {
         align-self: end;
         display: flex;
         gap: 15%;
-       text-wrap: nowrap;
-       width: fit-content;
+        text-wrap: nowrap;
+        width: fit-content;
         color: white;
       }
-      footer .social-medias a i{
+      footer .social-medias a i {
         text-decoration: none;
-        font-size: 25px;
+        font-size: 2.5rem;
         color: white;
       }
-      footer .social-medias a i:hover{
-        color: violet;
+      footer .social-medias a i:hover {
+        scale: 1.5;
+      }
+      footer .social-medias a i.bxl-facebook-square:hover {
+        color: rgb(30, 86, 227);
+        background-color: white;
+      }
+      footer .social-medias a i.bxl-twitter:hover {
+        color: rgb(71, 113, 219);
+        /* background-color: white; */
+      }
+      footer .social-medias a i.bxl-instagram-alt:hover {
+        background: linear-gradient(
+          45deg,
+          rgb(229, 34, 235),
+          rgb(131, 48, 219),
+          rgb(211, 27, 199)
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 15px rgb(255, 255, 255); /* Light text shadow */
+      }
+
+      footer .social-medias a i.bxl-linkedin-square:hover {
+        color: rgb(70, 117, 235);
+        background-color: white;
+      }
+      footer .social-medias a i.bxl-youtube:hover {
+        color: rgb(227, 30, 30);
+        background-color: white;
       }
     </style>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./responsive/navabr.css" />
   </head>
   <body>
     <div class="first-page">
@@ -638,6 +720,10 @@
           <h1>CourseMania</h1>
         </header>
         <nav>
+          <input type="checkbox" id="check" />
+          <label for="check">
+            <i class="bx bx-menu"></i>
+          </label>
           <ul>
             <li>
               <a href="#">Home</a>
@@ -647,12 +733,15 @@
               <a href="#">Contact</a>
             </li>
           </ul>
+
+          <div class="nav-opt">
+            <a href="#" aria-label="Login">Login</a>
+            <a href="#" class="btn" aria-label="Register">Register</a>
+            <a href="#" aria-label="Shopping Cart"
+              ><i class="bx bxs-cart"></i
+            ></a>
+          </div>
         </nav>
-        <div class="nav-opt">
-          <a href="#">Login</a>
-          <a href="#" class="btn">Register</a>
-          <a href="#"><i class="bx bxs-cart"></i></a>
-        </div>
       </div>
       <div class="container2">
         <div class="search-space">
@@ -662,24 +751,24 @@
         <div class="content">
           <p>explore what professionals like you are learning the most</p>
           <a href="#" class="btn">Visit Courses</a>
-          <div class="image">
-            <img src="./media/coursemenia.png" alt="" />
-          </div>
         </div>
+      </div>
+      <div class="image">
+        <img src="./media/coursemenia.png" alt="" />
       </div>
     </div>
 
     <div class="second-page">
       <div class="second-logos">
         <div class="logo">
-          <img src="./media/image.png" height="60px" alt="" />
+          <img src="./media/image.png" height="60" alt="" />
         </div>
         <div class="logo">
-          <img height="50px" width="45px" src="./media/khanacademy.png" />
+          <img height="50" width="45" src="./media/khanacademy.png" />
           <h2>Khan Academy</h2>
         </div>
         <div class="logo">
-          <img height="60px" width="60px" src="./media/cloud.webp" />
+          <img height="60" width="60" src="./media/cloud.webp" />
           <h2>cloud academy</h2>
         </div>
         <div class="logo"><h2>coursera</h2></div>
@@ -691,16 +780,20 @@
             >Professional Courses <i class="bx bxs-chevron-down"></i>
           </a>
           <div class="subcheckbox">
-            <input type="checkbox" name="" id="" checked />Free Courses
-            <input type="checkbox" name="" id="" checked />Paid Courses
+            <input type="checkbox" name="" id="free" checked /><label for="free"
+              >Free Courses</label
+            >
+            <input type="checkbox" name="" id="paid" checked /><label for="paid"
+              >Paid Courses</label
+            >
           </div>
-          <p style="font-weight: 600;">Sort:</p>
+          <p style="font-weight: 600">Sort:</p>
           <a>Low To High <i class="bx bxs-chevron-down"></i></a>
         </div>
-      </div>
-      <div class="popular-courses-contents">
         <div class="viewmorecourses"><a>View More Courses</a></div>
         <div class="nextpagearrow"><i class="bx bxs-chevrons-right"></i></div>
+      </div>
+      <div class="popular-courses-contents">
         <div class="popular-courses">
           <div class="tag"><a href="">Popular</a></div>
           <div class="popular-courses-image">
@@ -711,7 +804,29 @@
             <p>Duration : 25mins</p>
             <div><del>$15.90</del><span>*Free</span></div>
             <div class="logo">
-              <img height="18px" width="17px" src="./media/cloud.webp" />
+              <img height="18rem" width="17rem" src="./media/cloud.webp" />
+              <small>cloud academy</small>
+            </div>
+            <div class="ratings">
+              <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+              ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+              ><i class="bx bxs-star-half"></i> <span>(43,435)</span>
+            </div>
+          </div>
+          <div class="button enroll"><a href="">Enroll Now</a></div>
+          <div class="viewmoreinfo"><a href="">View More Info</a></div>
+        </div>
+        <div class="popular-courses">
+          <div class="tag"><a href="">Popular</a></div>
+          <div class="popular-courses-image">
+            <img src="./media/1.jpeg" alt="" />
+          </div>
+          <div class="popular-courses-info">
+            <h3>Unconscious Bias</h3>
+            <p>Duration : 25mins</p>
+            <div><del>$15.90</del><span>*Free</span></div>
+            <div class="logo">
+              <img height="18rem" width="17rem" src="./media/cloud.webp" />
               <small>cloud academy</small>
             </div>
             <div class="ratings">
@@ -733,7 +848,7 @@
             <p>Duration : 50mins</p>
             <div><price style="color: #c71818">$15.90</price></div>
             <div class="logo">
-              <img height="18px" width="17px" src="./media/khanacademy.png" />
+              <img height="18rem" width="17rem" src="./media/khanacademy.png" />
               <small style="color: black">Khan Academy</small>
             </div>
             <div class="ratings">
@@ -759,7 +874,7 @@
             <p>Duration : 1hour 12mins</p>
             <div><price style="color: #c71818">$10.90</price></div>
             <div class="logo">
-              <img height="18px" width="17px" src="./media/khanacademy.png" />
+              <img height="18rem" width="17rem" src="./media/khanacademy.png" />
               <small style="color: black">Khan Academy</small>
             </div>
             <div class="ratings">
@@ -787,13 +902,13 @@
             <input type="checkbox" name="" id="" />Free Certifications
             <input type="checkbox" name="" id="" checked />Paid Certifications
           </div>
-          <p style="font-weight: 600;">Sort:</p>
+          <p style="font-weight: 600">Sort:</p>
           <a>Best Seller <i class="bx bxs-chevron-down"></i></a>
         </div>
-      </div>
-      <div class="popular-courses-contents">
         <div class="viewmorecourses"><a>View More Courses</a></div>
         <div class="nextpagearrow"><i class="bx bxs-chevrons-right"></i></div>
+      </div>
+      <div class="popular-courses-contents">
         <div class="popular-courses">
           <div class="tag"><a href="">Best Seller</a></div>
           <div class="popular-courses-image">
@@ -804,7 +919,7 @@
             <p>Duration : 25mins</p>
             <div><price style="color: #c71818">$19.90</price></div>
             <div class="logo">
-              <img height="18px" width="17px" src="./media/cloud.webp" />
+              <img height="18rem" width="17rem" src="./media/cloud.webp" />
               <small>cloud academy</small>
             </div>
             <div class="ratings">
@@ -830,7 +945,7 @@
             <p>Duration : 50mins</p>
             <div><price style="color: #c71818">$18.90</price></div>
             <div class="logo">
-              <img height="18px" width="17px" src="./media/khanacademy.png" />
+              <img height="18rem" width="17rem" src="./media/khanacademy.png" />
               <small style="color: black">Khan Academy</small>
             </div>
             <div class="ratings">
@@ -856,7 +971,33 @@
             <p>Duration : 1hour 12mins</p>
             <div><price style="color: #c71818">$10.90</price></div>
             <div class="logo">
-              <img height="18px" width="17px" src="./media/khanacademy.png" />
+              <img height="18rem" width="17rem" src="./media/khanacademy.png" />
+              <small style="color: black">Khan Academy</small>
+            </div>
+            <div class="ratings">
+              <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+              ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+              ><i class="bx bxs-star"></i> <span>(12,435)</span>
+            </div>
+          </div>
+          <div class="add-btn">
+            <i class="bx bxs-plus-circle"></i>
+            <p>Add</p>
+          </div>
+          <div class="button buy"><a href="">Buy Now</a></div>
+          <div class="viewmoreinfo"><a href="">View More Info</a></div>
+        </div>
+        <div class="popular-courses">
+          <div class="tag"><a href="">Best Seller</a></div>
+          <div class="popular-courses-image">
+            <img src="./media/statistics.webp" alt="" />
+          </div>
+          <div class="popular-courses-info">
+            <h3>Statistics</h3>
+            <p>Duration : 1hour 12mins</p>
+            <div><price style="color: #c71818">$10.90</price></div>
+            <div class="logo">
+              <img height="18rem" width="17rem" src="./media/khanacademy.png" />
               <small style="color: black">Khan Academy</small>
             </div>
             <div class="ratings">
@@ -905,7 +1046,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="tutor">
           <div class="profile-pic">
             <img src="./media/profile-2.jpg" alt="" />
@@ -957,29 +1098,29 @@
     <!--  -->
     <footer>
       <div class="container">
-          <div class="col">
-            <a href="">About Us</a>
-            <a href="">Contact Us</a>
-            <a href="">Career</a>
-            <a href="">Blogs</a>
-          </div>
-          <div class="col">
-            <a href="">Udemy Business</a>
-            <a href="">Tech On udemy</a>
-            <a href="">Get The App</a>
-          </div>
-          <div class="col">
-            <a href="">Help & Support</a>
-            <a href="">Privacy Policy</a>
-          </div>
+        <div class="col">
+          <a href="">About Us</a>
+          <a href="">Contact Us</a>
+          <a href="">Career</a>
+          <a href="">Blogs</a>
+        </div>
+        <div class="col">
+          <a href="">Udemy Business</a>
+          <a href="">Tech On udemy</a>
+          <a href="">Get The App</a>
+        </div>
+        <div class="col">
+          <a href="">Help & Support</a>
+          <a href="">Privacy Policy</a>
+        </div>
       </div>
       <div class="social-medias">
         <ins>Follow us:</ins>
-        <a href=""><i class='bx bxl-facebook-square'></i></a>
+        <a href=""><i class="bx bxl-facebook-square"></i></a>
         <a href=""><i class="bx bxl-twitter"></i></a>
         <a href=""><i class="bx bxl-instagram-alt"></i></a>
-        <a href=""><i class="bx bxl-linkedin-square"></i></a>
         <a href=""><i class="bx bxl-youtube"></i></a>
+        <a href=""><i class="bx bxl-linkedin-square"></i></a>
       </div>
     </footer>
   </body>
