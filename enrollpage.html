@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unconscious Bias</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        transition: 1s;
+      }
+      :root {
+        --primary-color: rgb(14, 95, 95);
+        --button-color: rgba(16, 108, 108, 0.929);
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        padding: 1% 7%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: sans-serif;
+      }
+      nav {
+        width: 100%;
+        height: 8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* background-color: antiquewhite; */
+      }
+      nav .goback {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      nav .goback i {
+        color: var(--button-color);
+        font-size: 3.5rem;
+      }
+      nav .goback a {
+        color: var(--button-color);
+        font-size: 2.3rem;
+        font-weight: 600;
+      }
+      nav header h1 {
+        margin-left: 40%;
+        font-size: 4rem;
+        color: var(--button-color);
+      }
+      nav .nav-opt {
+        display: flex;
+        /* width: 50%; */
+        align-items: center;
+        justify-content: space-between;
+      }
+      nav .nav-opt a:first-child {
+        margin-right: 4rem;
+        color: var(--primary-color);
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      nav .nav-opt a:nth-child(2) {
+        margin-right: 4rem;
+        color: #fff;
+        font-size: 1.9rem;
+        font-weight: 550;
+        border: none;
+        border-radius: 1rem;
+        background: var(--button-color);
+        text-decoration: none;
+        padding: 1.2rem 3rem;
+      }
+      nav .nav-opt a:nth-child(3) {
+        color: var(--button-color);
+        font-size: 4.8rem;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        /* align-items: center; */
+        border-radius: 10px;
+        box-shadow: 0 0 1rem rgb(192, 191, 191);
+        background-color: rgba(238, 235, 232, 0.379);
+      }
+
+      .container .section1 h2 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+        /* align-self: flex-start; */
+      }
+      .container .section1 .video {
+        width: 100%;
+        height: 70vh;
+        position: relative;
+        border: 1px solid rgb(11, 133, 149);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .container .section1 .video video {
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .container .section1 .video .video-tag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: red;
+        padding: 2rem 4rem;
+      }
+      .container .section1 .video .video-tag p {
+        font-size: 1.87rem;
+        color: #fff;
+      }
+      .container .section1 .video .video-time {
+        position: absolute;
+        bottom: 15%;
+        left: 0;
+        z-index: 1;
+        background-color: rgb(139, 139, 139);
+        padding: 2rem 4rem;
+      }
+      .container .section1 .video .video-time p {
+        font-size: 1.87rem;
+        color: #fff;
+      }
+      .container .section2 {
+        display: flex;
+        justify-content: space-between;
+        padding: 3% 0;
+      }
+      .container .section2 .description {
+        border: 2px solid var(--button-color);
+        border-radius: 10px;
+        padding: 3% 3% 8% 3%;
+        width: 40rem;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+      }
+
+      .container .section2 .description .dlist {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        align-items: center;
+      }
+
+      .container .section2 .description .dlist i {
+        margin-right: 10px;
+      }
+
+      .container .section2 .description .dlist p {
+        font-weight: 600;
+        margin-left: 0;
+        flex: 1; /* Allow paragraph to take remaining space */
+      }
+      .container .section2 .description .dlist p span {
+        color: var(--button-color);
+      }
+      .container .section2 .description .dtag {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 2rem 5rem;
+        background-color: red;
+      }
+      .container .section2 .description .dtag p {
+        font-size: 3rem;
+        color: #fff;
+        font-weight: 600;
+      }
+      .container .section2 .enroll-btn {
+        align-self: center;
+      }
+      .container .section2 .enroll-btn a {
+        text-decoration: none;
+        font-size: 3.4rem;
+        color: #fff;
+        font-weight: 600;
+        background-color: var(--button-color);
+        padding: 3rem 6rem;
+        border-radius: 7px;
+      }
+      .container .section2 .rating {
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+      }
+      .container .section2 .rating i {
+        font-size: 3.5rem;
+        color: gold;
+      }
+      .container .section2 .rating em {
+        font-size: 2rem;
+        color: #bdbdbd;
+      }
+      .container .head-detail .heading h3,
+      .container .lesson-detail .heading h3,
+      .container .review .heading h3
+       {
+        font-size: 2.7rem;
+        display: inline-block;
+        color: var(--button-color);
+        margin: 2rem 0;
+      }
+      .container .head-detail .heading h3::after,
+      .container .review .heading h3::after
+       {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1.5px;
+        background-color: var(--button-color);
+      }
+      .container .head-detail .h-body, .container .l-body {
+        padding-left: 4%;
+      }
+      .container .head-detail .h-body p,.container .l-body p {
+        font-size: 1.7rem;
+      }
+      .container .head-detail .h-body details summary {
+        font-size: 1.7rem;
+        text-decoration: underline;
+        color: var(--button-color);
+      }
+      .container .lesson-detail .l-body {
+        position: relative;
+        width: 100%;
+      }
+      .container .lesson-detail .l-body h4{
+        font-size: 2rem;
+        margin: 1rem 0;
+      }
+      .container .lesson-detail .l-body h4 span{
+        color: var(--button-color);
+        margin-left:5px ;
+      }
+      .container .lesson-detail .l-body a{
+        font-size: 2rem;
+        position: absolute;
+        font-weight: 600;
+      left: 50%;
+        color: rgb(189, 189, 189);
+      }
+      .container .review .r-body{
+        display: flex;
+        align-items: center;
+        padding-left:4%;
+      }
+      .container .review .r-body .inputs{
+        position: relative;
+        width: 80%;
+      }
+      .container .review .r-body .inputs input{
+        padding-right: 26%;
+        height: 8rem;
+        width: 100%;
+        font-size: 1.8rem;
+        text-wrap: wrap;
+        border-radius: 10px;
+        border: 2px solid rgb(195, 195, 195);
+      }
+      .container .review .r-body .inputs .ratings{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--button-color);
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 25%;
+        height: 100%;
+      }
+      .container .review .r-body .inputs .ratings i{
+      font-size: 3rem;
+      color: rgb(255, 255, 255);
+      }
+      .container .review .r-body .inputs .ratings i:hover,
+      .container .review .r-body .inputs .ratings i:active{
+      color: gold;
+      }
+      .container .review .r-body a{
+        margin-left: 2rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgb(189, 189, 189);
+      }
+      footer{
+      align-self: flex-end;
+      }
+      footer img{
+        width: 35vw;
+      }
+      @media screen and (max-width:1024px){
+        html{
+          font-size: 50%;
+        }
+      }
+      @media screen and (max-width:768px){
+        html{
+          font-size: 40%;
+        }
+        .container .section1 .video {
+        width: 100%;
+        height: 52vh;
+      }
+      .container .section1 .video .video-time {
+      display: none;
+      }
+        .container .section2 .enroll-btn a {
+          font-size: 2.5rem;
+        }
+      }
+      @media screen and (max-width:768px){
+        body{
+          padding: 1%;
+        }
+        nav .nav-opt{
+          display: none;
+        }
+        nav header h1{
+          margin: 0;
+        }
+        .container{
+          padding-left: 3px;
+          padding-right: 3px;
+          
+        }
+        .container .section2 {
+        flex-direction: column-reverse;
+        gap: 5rem;
+        align-items: center;
+        }
+      .container .review .r-body .inputs input{
+        height: 6rem;
+      }
+      .container .review .r-body  a{
+        font-size: 2rem;
+      }
+      .container .review .r-body .inputs .ratings i{
+        font-size: 1.5rem;
+      }
+      }
+      @media screen and (max-width:320px){
+        html{
+          font-size: 37%;
+        }
+        .container .section1 .video {
+        width: 100%;
+        height: 40vh;
+      }
+      }
+    </style>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="goback">
+        <i class="bx bx-chevron-left"></i><a href="index.html">Go Back</a>
+      </div>
+      <header>
+        <h1>CourseMania</h1>
+      </header>
+      <div class="nav-opt">
+        <a href="login.html" aria-label="Login">Login</a>
+        <a href="register.html" class="btn" aria-label="Register">Register</a>
+        <a href="#" aria-label="Shopping Cart"><i class="bx bxs-cart"></i></a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="section1">
+        <h2>Unconscious Bias</h2>
+        <div class="video">
+          <video
+            controls
+            src="./media/Kandima Signature Video - 20 seconds.mp4"
+            alt=""
+          ></video>
+          <div class="video-tag">
+            <p>Popular</p>
+          </div>
+          <div class="video-time"><p>20sec</p></div>
+        </div>
+      </div>
+      <div class="section2">
+        <div class="description">
+          <div class="dlist">
+            <i class="bx bxs-user"></i>
+            <p>Creator: <span>Admin admin</span></p>
+          </div>
+          <div class="dlist">
+            <i class="bx bx-upload"></i>
+            <p>Uploaded On: <span>2002/04/23</span></p>
+          </div>
+          <div class="dlist">
+            <i class="bx bxs-time"></i>
+            <p>Duration: <span>25mins</span></p>
+          </div>
+          <div class="dlist">
+            <i class="bx bx-globe"></i>
+            <p>Language: <span>English</span></p>
+          </div>
+          <div class="dtag">
+            <p>Free</p>
+          </div>
+        </div>
+        <div class="enroll-btn">
+          <a href="#">Enroll Now</a>
+        </div>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star-half"></i>
+          <em>(43,435)</em>
+        </div>
+      </div>
+      <div class="section3">
+        <div class="head-detail">
+          <div class="heading">
+            <h3>Details</h3>
+          </div>
+          <div class="h-body">
+            <p>
+              Learn how to create a website using HTML and CSS. This course is
+              designed forlorem Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Minima perferendis quisquam ad ullam commodi nam
+              consectetur fuga voluptatem, repudiandae odio numquam rerum
+              aperiam nostrum provident dicta at officia iusto modi? Quam quidem
+              aspernatur ipsum facilis ullam laudantium amet, officia commodi?
+              Delectus nobis beatae illum debitis velit minima minus deleniti.
+              Amet, facere ea. Adipisci non fugiat unde architecto maxime
+              similique et! Porro at amet assumenda, vitae aspernatur incidunt
+              vero excepturi magni quae? Distinctio inventore voluptate optio
+              voluptates quo quia alias nobis iure eaque perferendis consectetur
+              architecto dolorum fugiat, expedita ad eveniet cupiditate
+              similique ipsam illo blanditiis dolorem deserunt?
+              <details>
+                <summary>Read More</summary>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Incidunt maiores veritatis aspernatur magnam iure. Illo,
+                  commodi suscipit odio deserunt, ullam amet eaque magnam
+                  blanditiis soluta laboriosam minus. Id, velit labore.
+                </p>
+              </details>
+            </p>
+          </div>
+        </div>
+        <div class="lesson-detail">
+          <div class="heading">
+            <h3>Lessons</h3>
+          </div>
+          <div class="l-body">
+            <h4>Lesson 1: <span>Lesson Title</span></h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia impedit corrupti harum quaerat delectus necessitatibus expedita voluptate tenetur laudantium officiis.</p>
+            <h4>Lesson 1: <span>Lesson Title</span></h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia impedit corrupti harum quaerat delectus necessitatibus expedita voluptate tenetur laudantium officiis.</p>
+            <h4>Lesson 1: <span>Lesson Title</span></h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia impedit corrupti harum quaerat delectus necessitatibus expedita voluptate tenetur laudantium officiis.</p>
+            <h4>Lesson 1: <span>Lesson Title</span></h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia impedit corrupti harum quaerat delectus necessitatibus expedita voluptate tenetur laudantium officiis.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+        <div class="review">
+          <div class="heading">
+            <h3>Write A Review</h3>
+          </div>
+          <div class="r-body">
+            <div class="inputs">
+              <input type="text" placeholder="Type something...">
+              <div class="ratings">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <a href="#">View Other's Review</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <img src="./media/cloudacademy-logo.png" alt="">
+    </footer>
+  </body>
+</html>

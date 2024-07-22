@@ -357,18 +357,15 @@
         box-shadow: 5px 5px 5px rgba(188, 188, 188, 0.66);
         background-color: #fff;
         scroll-snap-align: center;
-        overflow: hidden;
+        /* overflow: hidden; */
       }
       .second-page .popular-courses-contents .popular-courses:hover {
         box-shadow: 5px 5px 5px rgb(170, 170, 170);
         transform: translateY(-2%);
       }
-      .second-page .popular-courses-contents .popular-courses:hover img {
-        transform: scale(1.09);
-      }
       .second-page .popular-courses-contents .popular-courses .tag {
         position: absolute;
-        top: 4px;
+        top: 1.5%;
         z-index: 6;
       }
       .second-page .popular-courses-contents .popular-courses .tag a {
